@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //声明事件模型
+        function Event(){
+            this.events = {};
+        }
+
+        Event.prototype.on = function(attr, callback){
+            if(this.events[attr]){
+                this.events[attr].push(callback);
+            }else{
+                this.events[attr] = [callback];
+            }
+        };
+
+
+        Event.prototype.emit = function(attr){
+            this.events[attr] && this.events[attr].forEach(function(callback){
+                callback(attr);
+            })
+        }
+        //声明观察者
+        function Observer(data) {
+            this.data = data;
+            this.watch(data);
+            this.eventBus = new Event();
+        }
+        //获取原型
+        var prototype = Observer.prototype;
+        //声明遍历函数
+        prototype.watch = function (obj) {
+            var val;
+            for (var key in obj) {
+                //检测是否非父类属性
+                if(obj.hasOwnProperty(key)) {
+                    val = obj[key];
+                    //若属性为对象，递归遍历
+                    if(typeof val === 'object') {
+                        new Observer(val);
+                    }
+                    //处理属性
+                    this.convert(key,val);
+                }
+
+            }
+        };
+        
+        prototype.convert = function (key,val) {
+            let _this = this;
+            Object.defineProperty(this.data, key, {
+                enumerable:true,
+                configurable:true,
+                //更新get
+                get:function () {
+                    console.log('你访问了' + key);
+                    return val;
+                },
+                //更新set
+                set:function (newVal) {
+                    //实现$watch
+                    _this.eventBus.emit(key);
+                    //若新创建的属性是对象，则继续添加观察
+                    if (typeof newVal === 'object') {
+                        new Observer(newVal);
+                    }
+
+                    val = newVal;
+                }
+            });
+        };
+
+        prototype.$watch = function (attr,callback) {
+
+            this.eventBus.on(attr,callback);
+
+        };
+
+
+        var app2 = new Observer({
+            university: 'bupt',
+            major: 'computer'
+        });
+        var app1 = new Observer({
+            name: 'youngwind',
+            age: 25
+        });
+        
+    </script>
+</body>
+</html>
