@@ -6,23 +6,25 @@
 </head>
 <body>
     <script type="text/javascript">
-        
+        //声明观察者
         function Observer(data) {
             this.data = data;
             this.watch(data);
         }
-
+        //获取原型
         var prototype = Observer.prototype;
-        
+        //声明遍历函数
         prototype.watch = function (obj) {
             var val;
             for (var key in obj) {
+                //检测是否非父类属性
                 if(obj.hasOwnProperty(key)) {
                     val = obj[key];
-
+                    //若属性为对象，递归遍历
                     if(typeof val === 'object') {
                         new Observer(val);
                     }
+                    //处理属性
                     this.convert(key,val);
                 }
 
@@ -33,10 +35,12 @@
             Object.defineProperty(this.data, key, {
                 enumerable:true,
                 configurable:true,
+                //更新get
                 get:function () {
                     console.log('你访问了' + key);
                     return val;
                 },
+                //更新set
                 set:function (newVal) {
                     console.log('你设置了' + key);
                     console.log('新的' + key + ' = ' + newVal);
