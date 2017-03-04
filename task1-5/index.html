@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+</head>
+<body>
+    <header>
+        <span>
+            <a href="#">
+                <img src="images/baidu-logo.png" alt="logo">
+            </a>
+        </span>
+        <nav>
+            <ul>
+                <li><a href="#">导航链接一</a></li>
+                <li><a href="#">导航链接二</a></li>
+                <li><a href="#">导航链接三</a></li>
+                <li><a href="#">导航链接四</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <h2>侧栏标题</h2>
+        <form action="" method="post">
+            <div>
+                <div class="inputMessage">请输入邮箱地址</div>
+                <input class="input" type="email" placeholder="这是一个文本输入框"/>
+            </div>
+            <div class="require">邮箱地址请按要求格式输入</div>
+            <div>
+                <div class="inputMessage">请输入密码</div>
+                <input class="input" type="password" minlength="6" maxlength="16" pattern="[A-Za-z0-9\-]*" placeholder="这是一个文本输入框"/>
+            </div>
+            <div>
+                <div class="inputMessage">请重复输入密码</div>
+                <input class="input" type="password" minlength="6" maxlength="16" pattern="[A-Za-z0-9\-]*" placeholder="这是一个文本输入框"/>
+            </div>
+            <div class="require">密码请为6-16位英文数字</div>
+            <div>
+                <div class="inputMessages">性别：</div>
+                <input type="radio" name="sex" id="man" checked="checked"/>
+                <label for="man">男</label>
+                <input type="radio" name="sex" id="woman"/>
+                <label for="woman">女</label>
+            </div>
+            <div>
+                <div class="inputMessages">城市：</div>
+                <select>
+                    <option value="BJ">北京</option>
+                    <option value="SH">上海</option>
+                    <option value="GZ">广州</option>
+                </select>
+            </div>
+            <div>
+                <div class="inputMessages">爱好：</div>
+                <input type="checkbox" id="sport"/>
+                <label for="sport">运动</label>
+                <input type="checkbox" id="art"/>
+                <label for="art">艺术</label>
+                <input type="checkbox" id="science"/>
+                <label for="science">科学</label>
+            </div>
+            <div>
+                <div class="inputMessage">个人描述：</div>
+                <textarea placeholder="这是一个多行输入框，输入您的个人描述"></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="确认提交"/>
+            </div>
+        </form>
+    </aside>
+
+    <div class="container">
+        <article>
+            <h2>文章一级标题</h2>
+            <h3>文章二级标题</h3>
+            <span>文章作者</span>
+            <span>文章发表时间</span>
+            <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有个链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+            <img src="images/content.png" alt="我是图">
+        </article>
+        <article>
+            <h2>文章一级标题</h2>
+            <h3>文章二级标题</h3>
+            <span>文章作者</span>
+            <span>文章发表时间</span>
+            <p>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。<br>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<strong>这里有个粗体字</strong>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，<a href="http://ife.baidu.com">这里有个链接到http://ife.baidu.com</a>这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落，这是一个很长很长的段落。</p>
+            <img src="images/content.png" alt="我是图">
+            <ul>
+                <li>列表项目1</li>
+                <li>列表项目2</li>
+                <li>列表项目3</li>
+            </ul>
+        </article>
+        <article>
+            <h2>图片</h2>
+            <figure>
+                <figcaption>好看的图片</figcaption>
+                <img src="images/content.png" alt="我是图">
+            </figure>
+            <figure>
+                <figcaption>好看的图片</figcaption>
+                <img src="images/content.png" alt="我是图">
+            </figure>
+            <figure>
+                <figcaption>好看的图片</figcaption>
+                <img src="images/content.png" alt="我是图">
+            </figure>
+            <figure>
+                <figcaption>好看的图片</figcaption>
+                <img src="images/content.png" alt="我是图">
+            </figure>
+            <figure>
+                <figcaption>好看的图片</figcaption>
+                <img src="images/content.png" alt="我是图">
+            </figure>
+
+        </article>
+        <article>
+            <h2>最后一篇文章一级标题</h2>
+            <h3>文章二级标题</h3>
+            <span>文章作者</span>
+            <span>文章发表时间</span>
+            <ol>
+                <li>排名1</li>
+                <li>排名2</li>
+                <li>排名3</li>
+            </ol>
+            <table border="1">
+                <thead>
+                <tr>
+                    <th>表头</th>
+                    <th>表头</th>
+                    <th>表头</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>表内容单元格</td>
+                    <td>表内容单元格</td>
+                    <td><a href="#">操作</a></td>
+                </tr>
+                <tr>
+                    <td>表内容单元格</td>
+                    <td>表内容单元格</td>
+                    <td><a href="#">操作</a></td>
+                </tr>
+                <tr>
+                    <td>表内容单元格</td>
+                    <td>表内容单元格</td>
+                    <td><a href="#">操作</a></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td>总计</td>
+                    <td colspan="2">1000</td>
+                </tr>
+                </tfoot>
+            </table>
+        </article>
+    </div>
+
+
+    <footer>
+        <p>©2017 cycbot. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

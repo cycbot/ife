@@ -21,6 +21,56 @@
             </ul>
         </nav>
     </header>
+    <aside>
+        <h2>侧栏标题</h2>
+        <form action="" method="post">
+            <div>
+                <div class="inputMessage">请输入邮箱地址</div>
+                <input class="input" type="email" placeholder="这是一个文本输入框"/>
+            </div>
+            <div class="require">邮箱地址请按要求格式输入</div>
+            <div>
+                <div class="inputMessage">请输入密码</div>
+                <input class="input" type="password" minlength="6" maxlength="16" pattern="[A-Za-z0-9\-]*" placeholder="这是一个文本输入框"/>
+            </div>
+            <div>
+                <div class="inputMessage">请重复输入密码</div>
+                <input class="input" type="password" minlength="6" maxlength="16" pattern="[A-Za-z0-9\-]*" placeholder="这是一个文本输入框"/>
+            </div>
+            <div class="require">密码请为6-16位英文数字</div>
+            <div>
+                <div class="inputMessages">性别：</div>
+                <input type="radio" name="sex" id="man" checked="checked"/>
+                <label for="man">男</label>
+                <input type="radio" name="sex" id="woman"/>
+                <label for="woman">女</label>
+            </div>
+            <div>
+                <div class="inputMessages">城市：</div>
+                <select>
+                    <option value="BJ">北京</option>
+                    <option value="SH">上海</option>
+                    <option value="GZ">广州</option>
+                </select>
+            </div>
+            <div>
+                <div class="inputMessages">爱好：</div>
+                <input type="checkbox" id="sport"/>
+                <label for="sport">运动</label>
+                <input type="checkbox" id="art"/>
+                <label for="art">艺术</label>
+                <input type="checkbox" id="science"/>
+                <label for="science">科学</label>
+            </div>
+            <div>
+                <div class="inputMessage">个人描述：</div>
+                <textarea placeholder="这是一个多行输入框，输入您的个人描述"></textarea>
+            </div>
+            <div class="submit">
+                <input type="submit" value="确认提交"/>
+            </div>
+        </form>
+    </aside>
     <article>
         <h2>文章一级标题</h2>
         <h3>文章二级标题</h3>
@@ -109,56 +159,7 @@
             </tfoot>
         </table>
     </article>
-    <aside>
-        <h2>侧栏标题</h2>
-        <form action="" method="post">
-            <div>
-                <div class="inputMessage">请输入邮箱地址</div>
-                <input class="input" type="email" placeholder="这是一个文本输入框"/>
-            </div>
-            <div class="require">邮箱地址请按要求格式输入</div>
-            <div>
-                <div class="inputMessage">请输入密码</div>
-                <input class="input" type="password" minlength="6" maxlength="16" pattern="[A-Za-z0-9\-]*" placeholder="这是一个文本输入框"/>
-            </div>
-            <div>
-                <div class="inputMessage">请重复输入密码</div>
-                <input class="input" type="password" minlength="6" maxlength="16" pattern="[A-Za-z0-9\-]*" placeholder="这是一个文本输入框"/>
-            </div>
-            <div class="require">密码请为6-16位英文数字</div>
-            <div>
-                <div class="inputMessages">性别：</div>
-                <input type="radio" name="sex" id="man" checked="checked"/>
-                <label for="man">男</label>
-                <input type="radio" name="sex" id="woman"/>
-                <label for="woman">女</label>
-            </div>
-            <div>
-                <div class="inputMessages">城市：</div>
-                <select>
-                    <option value="BJ">北京</option>
-                    <option value="SH">上海</option>
-                    <option value="GZ">广州</option>
-                </select>
-            </div>
-            <div>
-                <div class="inputMessages">爱好：</div>
-                <input type="checkbox" id="sport"/>
-                <label for="sport">运动</label>
-                <input type="checkbox" id="art"/>
-                <label for="art">艺术</label>
-                <input type="checkbox" id="science"/>
-                <label for="science">科学</label>
-            </div>
-            <div>
-                <div class="inputMessage">个人描述：</div>
-                <textarea placeholder="这是一个多行输入框，输入您的个人描述"></textarea>
-            </div>
-            <div class="submit">
-                <input type="submit" value="确认提交"/>
-            </div>
-        </form>
-    </aside>
+
 
     <footer>
         <p>©2017 cycbot. All Rights Reserved.</p>

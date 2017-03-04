@@ -3,6 +3,7 @@ body {
     margin: 0;
     background-color: rgb(222,222,222);
     font-family: "Microsoft Sans Serif";
+    min-width: 750px;
 }
 
 header {
@@ -44,12 +45,26 @@ nav ul li a {
     text-decoration: none;
 }
 
+.container {
+    overflow: hidden;
+}
+
 article, aside{
     padding: 20px;
-    margin:40px 40px 20px 40px;
     background-color: #FFF;
     box-shadow: 2px 2px 2px #848484;
-    min-width:300px;
+ 
+}
+
+article {
+    margin: 40px 20px 20px 40px;
+}
+
+aside {
+    float: right;
+    width: 350px;
+    margin-top: 40px;
+    margin-right: 20px;
 }
 
 article h3 {
@@ -72,8 +87,8 @@ figure {
     height: 180px;
     width: 240px;
     border: 1px solid #aaa;
-    display: inline-block;
     text-align: center;
+    display: inline-block;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
