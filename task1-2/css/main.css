@@ -1,0 +1,179 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(222,222,222);
+    font-family: "Microsoft Sans Serif";
+}
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: #333333;
+    display: table;
+    vertical-align: middle;
+    font-size: 14px;
+    color: white;
+    min-width: 700px;
+}
+
+header span {
+    display: table-cell;
+    vertical-align: middle;
+    height: 70px;
+}
+
+header span img {
+    margin-left: 35px;
+    cursor:pointer;
+}
+
+nav ul {
+    float:right;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul li {
+    line-height: 70px;
+    float: left;
+    margin-right: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+article, aside{
+    margin:40px 40px 20px 40px;
+    background-color: #FFF;
+    box-shadow: 2px 2px 2px #848484;
+    min-width:300px;
+}
+
+article h3 {
+    color: gray;
+}
+
+article p {
+    text-indent: 2em;
+}
+
+article img {
+    width:30%;
+}
+
+article ul li {
+    list-style: none;
+}
+
+figure {
+    height: 180px;
+    width: 240px;
+    border: 1px solid #aaa;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+figcaption {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+article figure img {
+    width: 70%;
+}
+
+article span {
+    color: gray;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-color: #ccc;
+    border-collapse: collapse;
+}
+
+thead {
+    color: white;
+    background: #333;
+}
+
+tfoot {
+    background: #ccc;
+    font-weight: bold;
+}
+
+ol>li {
+    font-weight: bold;
+}
+
+aside h2 {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 3px #ccc solid;
+}
+
+form {
+    width:100%;
+    min-width:300px;
+}
+
+form>div {
+    margin:10px 0;
+}
+
+.input {
+    vertical-align: bottom;
+}
+
+.inputMessage {
+    width:30%;
+    text-align: right;
+    display: inline-block;
+    margin: 10px 10px 0px;
+    vertical-align: top;
+}
+
+.inputMessages {
+    width:30%;
+    text-align: right;
+    display: inline-block;
+    margin: 10px 10px 0px;
+}
+
+.require {
+    font-size: 14px;
+    color: gray;
+    margin-left: 31.5%;
+    margin-top: 10px;
+}
+
+textarea {
+    margin-top: 10px;
+    width: 50%;
+    height: 100px;
+}
+
+input[type='submit'] {
+    width:100%;
+    height:40px;
+    background: #3355D0;
+    color: #fff;
+    cursor:pointer;
+    border-radius: 8px;
+    border: 1px solid #3355D0;
+    font-weight: 800;
+}
+
+footer {
+    width:100%;
+    height: 60px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 60px;
+}
