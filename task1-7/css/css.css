@@ -1,0 +1,660 @@
+html, body, h1, h2, h3, h4, h5, h6, div, ul, li, p, form, label, input, button, img, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #000;
+}
+
+button {
+    -ms-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+}
+
+body, textarea, input, button {
+    font: 12px/1.14 'Microsoft YaHei';
+    outline: 0;
+    color: #000;
+}
+
+html,body {
+    width: 100%;
+    min-width: 1280px;
+}
+
+.header {
+    width: 100%;
+    height: 57px;
+    background-color: #fff;
+}
+
+.header #logo {
+    float: left;
+    height: 31px;
+    margin: 13px 0 0 59px;
+    font: 1.75em 'SimHei';
+    line-height: 31px;
+    color: #393a3a;
+}
+
+.header #logo img {
+    float: left;
+    margin-right: 11px;
+}
+
+.header .header-loginbtn {
+    float: right;
+    width: 28px;
+    height: 17px;
+    padding-left: 19px;
+    margin: 19px 67px 0 12px;
+    background: url(../image/login.png) no-repeat 0 center;
+    color: #e74f4d;
+    font-size: 1.166667em;
+    line-height: 17px;
+    cursor: pointer;
+}
+
+.nav {
+    float: right;
+}
+
+.nav li {
+    float: left;
+    height: 52px;
+    padding: 0 19px;
+    line-height: 52px;
+    cursor: pointer;
+}
+
+.nav li a {
+    font-size: 1.166667em;
+    color: #787b83;
+}
+
+.nav li:hover a {
+    color: #e74f4d;
+}
+
+.nav li.active {
+    border-bottom: 5px #e74f4d solid;
+}
+
+.nav li.active a {
+    color: #e74f4d;
+}
+
+.banner-section {
+    position: relative;
+    width: 100%;
+    height: 690px;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.banner-section img {
+    width: 100%;
+}
+
+.banner-wrap {
+    position: absolute;
+    left: 9.140625%;
+    top: 33.333333%;
+    color: #fff;
+}
+
+.banner-wrap h1 {
+    font-size: 5em;
+    margin-bottom: 30px;
+}
+
+.banner-wrap p {
+    font-size: 1.75em;
+    line-height: 32px;
+    padding-left: 7px;
+}
+
+.banner-wrap .banner-btn {
+    display: block;
+    width: 330px;
+    height: 64px;
+    margin: 63px 0 0 7px;
+    background-color: #e73f4d;
+    text-align: center;
+    font-size: 2.5em;
+    line-height: 64px;
+    color: #fff;
+}
+
+.banner-wrap .banner-btn:hover {
+    background-color: #e9615f;
+}
+
+.section-3 {
+    height: 205px;
+    padding-top: 45px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.section-3 li {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.section-3 li img {
+    height: 40px;
+}
+
+.section-3 li p {
+    width: 50%;
+    height: 52px;
+    padding: 0 25%;
+    margin-top: 46px;
+    font: 1.166667em 'SimHei';
+    color: #767777;
+    border-right: 2px solid #aaaaaa;
+}
+
+.section-4 {
+    width: 100%;
+    height: 360px;
+    background-color: #ededec;
+    text-align: center;
+}
+.section-4 img {
+    margin: 89px 0 49px;
+}
+.section-4 p {
+    color: #323333;
+    font: 4.5em 'SimHei';
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.section-5 {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.section-5 h1 {
+    font-size: 1.75em;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.section-5 .line {
+    margin: 10px 0 19px;
+}
+
+.section-5 p {
+    color: #fff;
+}
+
+.line {
+    display: inline-block;
+    height: 3px;
+    width: 30px;
+    background-color: #fff;
+}
+
+.section-5-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.select-imitation {
+    display: inline-block;
+    width: 1030px;
+    margin-top: 50px;
+}
+
+.select {
+    float: left;
+    position: relative;
+    width: 187px;
+    height: 35px;
+    padding: 0 35px 0 12px;
+    text-align: left;
+    background-color: #fff;
+    margin-right: 29px;
+    color: #a8aaaa;
+    border-width: 0 1px;
+    border-color: #e2cec9;
+    border-style: solid;
+    overflow: hidden;
+}
+
+.select .arrow {
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    cursor:pointer;
+}
+
+.select .valuebox {
+    height: 100%;
+    line-height: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.select.active {
+    border: 1px solid #c27971;
+    overflow: visible;
+}
+
+.options {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    width: 100%;
+    height: 104px;
+    border: 1px solid #c27971;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+.options .option {
+    height: 26px;
+    width: 203px;
+    padding-left: 31px;
+    line-height: 26px;
+    background-color: #e3e2e4;
+    color: #323333;
+}
+
+.options .option:hover {
+    background: url(../img/tick.png) no-repeat 8px center;
+    background-color: #be4e48;
+    color: #fff;
+}
+#search {
+    float: left;
+    width: 210px;
+    height: 35px;
+    padding-left: 25px;
+    background-color: #be4e48;
+    letter-spacing: 25px;
+    color: #fff;
+    font-size: 1.166667em;
+}
+
+.section-6 {
+    height: 530px;
+    padding-top: 100px;
+    width: 100%;
+    text-align: center;
+    background-color: #f8f7f7;
+}
+.section-6 ul {
+    display: inline-block;
+    width: 986px;
+}
+.section-6 ul li {
+    position: relative;
+    width: 217px;
+    height: 323px;
+    padding-top: 13px;
+    margin-left: 36px;
+    border: 1px solid #dcdcdc;
+    background-color: #fff;
+    float: left;
+}
+.section-6 ul li:first-child {
+    margin-left: 0;
+}
+.section-6 ul li.reverse {
+    top: 53px;
+}
+.section-6 ul li.reverse .info {
+    top: -50px;
+}
+.section-6 ul li.reverse .info h1 {
+    font-size: 1.666667em;
+    letter-spacing: 35px;
+    margin-right: -36px;
+}
+
+.info {
+    position: absolute;
+    bottom: -45px;
+    width: 100%;
+    text-align: center;
+}
+.info h1 {
+    font-size: 1.166667em;
+}
+.info p {
+    margin-top: 5px;
+    color: #bcbdbd;
+}
+
+.section-7 {
+    width: 100%;
+    overflow: hidden;
+}
+.section-7 img {
+    float: left;
+    width: 66.666667%;
+}
+
+.section-7-r {
+    float: left;
+    width: 33.333333%;
+    text-align: center;
+}
+.section-7-r h1 {
+    margin: 165px 0 30px;
+    font-size: 1.666667em;
+}
+.section-7-r h1 img {
+    float: none;
+    width: 20px;
+    vertical-align: -3px;
+}
+.section-7-r h1 span {
+    color: #e74f4d;
+}
+.section-7-r p {
+    width: 286px;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'SimSun';
+    color: #aaaaaa;
+    line-height: 30px;
+}
+.section-7-r a {
+    display: inline-block;
+    height: 31px;
+    line-height: 31px;
+    width: 104px;
+    margin: 50px 0 25px;
+    border: 1px solid #e74f4d;
+    color: #e74f4d;
+}
+.section-7-r a:hover {
+    background-color: #e74f4d;
+    color: #fff;
+}
+
+#points {
+    width: 61px;
+    height: 12px;
+    margin: 0 auto;
+}
+#points li {
+    float: left;
+    width: 11px;
+    height: 12px;
+    margin-left: 14px;
+    background: url(../image/point.png) no-repeat;
+    cursor: pointer;
+}
+#points li:first-child {
+    margin-left: 0;
+}
+#points li.active {
+    background: url(../image/point_active.png) no-repeat;
+}
+
+.section-8 {
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+}
+.section-8 img {
+    float: left;
+    width: 33.333334%;
+}
+
+.section-8-l {
+    float: left;
+    height: 350px;
+    padding-top: 170px;
+    width: 33.333333%;
+    color: #323333;
+    text-align: center;
+}
+.section-8-l .line {
+    margin: 0 auto;
+    background-color: #ababab;
+    margin: 25px 0;
+}
+.section-8-l.red {
+    background-color: #e74f4d;
+    color: #fff;
+}
+.section-8-l.red .line {
+    background-color: #fff;
+}
+.section-8-l.red a {
+    border: 1px solid #fff;
+    color: #fff;
+}
+.section-8-l.red a:hover {
+    color: #e74f4d;
+    background-color: #fff;
+}
+.section-8-l p {
+    font: 1.75em 'SimHei';
+}
+.section-8-l a {
+    display: block;
+    width: 168px;
+    height: 41px;
+    margin: 0 auto;
+    border: 1px solid #e74f4d;
+    color: #e74f4d;
+    font: 1.75em 'SimHei';
+    line-height: 41px;
+}
+.section-8-l a:hover {
+    color: #fff;
+    background-color: #e74f4d;
+}
+
+.section-9 {
+    height: 750px;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-9 h1 {
+    margin: 119px 0 26px;
+    font: 1.75em 'SimHei';
+    color: #323333;
+}
+.section-9 p {
+    width: 420px;
+    margin: 0 auto;
+    line-height: 18px;
+    color: #aaaaaa;
+}
+
+.section-9-l {
+    float: left;
+    width: 290px;
+    text-align: left;
+    margin-top: 108px;
+}
+.section-9-l li {
+    width: 100%;
+    margin-top: 40px;
+    overflow: hidden;
+}
+.section-9-l li h3 {
+    font: 1.166667em 'SimHei';
+    color: #231815;
+}
+.section-9-l li p {
+    width: 100%;
+    margin: 26px 0 12px;
+}
+.section-9-l li a {
+    display: block;
+    float: right;
+    width: 24px;
+    height: 20px;
+    padding-left: 18px;
+    background: url(../image/unfold.png) no-repeat 0 9px;
+    line-height: 20px;
+    font-family: 'SimSun';
+    outline: 0;
+}
+.section-9-l li:first-child {
+    margin-top: 0;
+}
+
+.section-9-form {
+    width: 640px;
+    float: left;
+    margin-left: 70px;
+    margin-top: 108px;
+}
+.section-9-form p {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 310px;
+    margin: 0 0 20px 20px;
+    text-align: left;
+    background-color: #ededee;
+}
+.section-9-form p label {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 75px;
+    padding-left: 15px;
+    color: #231815;
+    font-family: 'SimSun';
+}
+.section-9-form p input {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 220px;
+    line-height: 40px;
+    background-color: transparent;
+}
+.section-9-form p.nomargin {
+    margin-left: 0;
+}
+.section-9-form textarea {
+    width: 620px;
+    height: 140px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #ededee;
+    font-family: 'SimSun';
+    color: #231815;
+    resize: none;
+}
+.section-9-form #submit {
+    width: 100%;
+    height: 40px;
+    font: 1.166667em 'SimHei';
+    line-height: 40px;
+    background-color: #ededee;
+}
+
+.section-10 {
+    height: 325px;
+    padding-top: 90px;
+    width: 100%;
+    background-color: #32353e;
+    text-align: center;
+}
+.section-10 h1 {
+    color: #fff;
+    font: 1.75em 'SimHei';
+}
+.section-10 p {
+    width: 470px;
+    margin: 13px auto 30px;
+    color: #fff;
+    font-family: 'SimSun';
+}
+.section-10 form {
+    display: inline-block;
+    width: 510px;
+    height: 40px;
+}
+.section-10 form input {
+    float: left;
+    width: 420px;
+    line-height: 40px;
+    padding-left: 10px;
+    height: 100%;
+    color: #231815;
+}
+.section-10 form button {
+    float: left;
+    width: 71px;
+    padding-left: 9px;
+    height: 100%;
+    font-size: 1.25em;
+    color: #fff;
+    background-color: #6f7178;
+    letter-spacing: 9px;
+}
+.section-10 form button:hover {
+    background-color: #797b83;
+}
+
+#share {
+    margin-top: 36px;
+}
+#share a {
+    margin-left: 27px;
+    outline: 0;
+}
+#share a:first-child {
+    margin-left: 0;
+}
+
+.footer {
+    height: 58px;
+    width: 100%;
+    background-color: #303039;
+}
+.footer p {
+    float: left;
+    height: 58px;
+    line-height: 58px;
+    color: #fff;
+    font-family: 'SimSun';
+    margin-left: 100px;
+}
+.footer p#toTop {
+    float: right;
+    margin: 0 40px 0 0;
+    cursor: pointer;
+}
