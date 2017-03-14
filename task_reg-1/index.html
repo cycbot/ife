@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="phone">手机号码</label>
+<input type="text" id="phone">
+<button type="button" id="phone_check">检测</button>
+
+<label for="word">相邻连续单词</label>
+<input type="text" id="word">
+<button type="button" id="word_check">检测</button>
+
+<script type="text/javascript">
+    var phone = document.getElementById('phone');
+
+    document.getElementById('phone_check').onclick = function () {
+        if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone.value))) {
+            alert("false");
+        } else {
+            alert("true");
+        }
+    };
+
+    var word = document.getElementById('word');
+
+    document.getElementById('word_check').onclick = function () {
+        if(!(/\b([a-z]+)\b\s+\b\1\b/.test(word.value))) {
+            alert("false");
+        } else {
+            alert("true");
+        }
+    };
+
+
+</script>
+</body>
+</html>
