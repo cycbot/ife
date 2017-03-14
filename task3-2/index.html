@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            font-family: "Microsoft YaHei"
+        }
+
+        input[type="submit"] {
+            border: none;
+            background-color: #2F79BA;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        div{
+            margin:5px auto;
+            display: flex;
+            flex-flow: inherit;
+            width: 300px;
+        }
+
+        input {
+            border: 1px solid #888;
+            padding: 7px;
+        }
+
+
+        p {
+            font-size: .8rem;
+            color: #888888;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<form action="#" method="get" id="form">
+    <div>
+        <label for="name">名称</label>
+        <input type="text" id="name"/>
+        <p>必填，长度4~16个字符</p>
+    </div>
+    <div>
+        <label for="password">密码</label>
+        <input type="password" id="password"/>
+        <p>请输入密码</p>
+    </div>
+    <div>
+        <label for="password_confirm">密码确认</label>
+        <input type="password" id="password_confirm" />
+        <p>再次输入相同的密码</p>
+    </div>
+    <div>
+        <label for="email">邮箱</label>
+        <input type="email" id="email"/>
+        <p>请输入你的邮箱</p>
+    </div>
+    <div>
+        <label for="phone_number">手机</label>
+        <input type="text" id="phone_number"/>
+        <p>请输入您的手机号码</p>
+        <input type="submit" id="submit" value="提交"/>
+    </div>
+</form>
+
+<script type="text/javascript">
+
+    var name_info = document.getElementById('name');
+    var password_info = document.getElementById('password');
+    var password_confirm_info = document.getElementById('password_confirm');
+    var email_info = document.getElementById('email');
+    var phone_info = document.getElementById('phone_number');
+
+    function getLength(str) {
+        var count = 0;
+        for (var i = 0;i< str.length;i++) {
+            var char_code = str.charCodeAt(i);
+            if(char_code >= 0 && char_code <= 128) {
+                count += 1;
+            } else {
+                count += 2;
+            }
+        }
+
+        return count;
+    }
+
+    (function showHint() {
+        for(var i=0,j=document.getElementsByTagName("input");i<j.length;i++) {
+            j[i].addEventListener("focus",function () {
+                this.nextElementSibling.style.display = "block";
+            },false);
+            j[i].addEventListener("blur",function () {
+                validateName();
+                validatePassword();
+                validateEmail();
+                validatePhone();
+
+            })
+        }
+    })();
+    
+    var validateName = function () {
+
+        if (name_info.value == "") { //验证是否为空
+            name_info.nextElementSibling.innerHTML = "必填，长度为4~16个字符";
+            name_info.nextElementSibling.style.color = "#BBB";
+            name_info.style.border = "1px solid #888";
+            return;
+        } else if (getLength(name_info.value) < 4 || getLength(name_info.value) > 16) { //验证长度是否符合标准
+            name_info.nextElementSibling.innerHTML = "长度只能为为4~16个字符";
+            name_info.nextElementSibling.style.color = "#f00";
+            name_info.style.border = "2px solid #f00";
+            return;
+        } else {
+            name_info.nextElementSibling.innerHTML = "名称格式正确";
+            name_info.nextElementSibling.style.color = "#0f0";
+            name_info.style.border = "2px solid #0f0";
+            return name_info.value;
+        }
+
+
+    };
+
+    var validatePassword = function(){
+        if(password_info.value!=""){
+            password_info.nextElementSibling.innerHTML = "密码可用";
+            password_info.nextElementSibling.style.color = "#0f0";
+            password_info.style.border = "2px solid #0f0"
+        }else{
+            password_info.nextElementSibling.innerHTML = "请输入密码";
+            password_info.nextElementSibling.style.color = "#BBBBBB";
+            password_info.style.border = "1px solid #888";
+        }
+        if(password_confirm_info.value!=""){
+            if(password_info.value === password_confirm_info.value){
+                password_confirm_info.nextElementSibling.innerHTML = "密码输入一致";
+                password_confirm_info.nextElementSibling.style.color = "#0f0";
+                password_confirm_info.style.border = "2px solid #0f0";
+            }else{
+                password_confirm_info.nextElementSibling.innerHTML = "密码输入不一致";
+                password_confirm_info.nextElementSibling.style.color = "#f00";
+                password_confirm_info.style.border = "2px solid #f00";
+            }
+        }else{
+            password_confirm_info.nextElementSibling.innerHTML = "再次输入相同的密码";
+            password_confirm_info.nextElementSibling.style.color = "#bbb";
+            password_confirm_info.style.border = "1px solid #888";
+        }
+
+    }
+
+    var validateEmail = function(){
+        if(email_info.value!=""){
+            var filter = /^[a-z0-9]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/;
+            if(filter.test(email_info.value)){
+                email_info.nextElementSibling.innerHTML = "邮箱格式正确";
+                email_info.nextElementSibling.style.color = "#0f0";
+                email_info.style.border = "2px solid #0f0";
+            }else{
+                email_info.nextElementSibling.innerHTML = "邮箱格式错误";
+                email_info.nextElementSibling.style.color = "#f00";
+                email_info.style.border = "2px solid #f00";
+            }
+        }else{
+            email_info.nextElementSibling.innerHTML = "输入您的邮箱";
+            email_info.nextElementSibling.style.color = "#BBB";
+            email_info.style.border = "1px solid #888";
+        }
+    }
+
+    var validatePhone = function(){
+        if(phone_info.value != ""){
+            var filter = /^1[3|4|5|8][0-9]\d{8}$/i;
+            if(filter.test(phone_info.value)){
+                phone_info.nextElementSibling.innerHTML = "手机格式正确";
+                phone_info.nextElementSibling.style.color = "#0f0";
+                phone_info.style.border = "2px solid #0f0";
+            }else{
+                phone_info.nextElementSibling.innerHTML = "手机格式错误";
+                phone_info.nextElementSibling.style.color = "#f00";
+                phone_info.style.border = "2px solid #f00";
+            }
+        }else{
+            phone_info.nextElementSibling.innerHTML = "输入您的手机号码";
+            phone_info.nextElementSibling.style.color = "#BBB";
+            phone_info.style.border = "1px solid #888";
+        }
+    }
+
+
+    var validateAll = function () {
+        if(phone_info.nextElementSibling.style.color == "rgb(0, 255, 0)" &&
+            email_info.nextElementSibling.style.color == "rgb(0, 255, 0)" &&
+            password_info.nextElementSibling.style.color == "rgb(0, 255, 0)" &&
+            name_info.nextElementSibling.style.color == "rgb(0, 255, 0)") {
+            alert("提交成功!")
+        } else {
+            alert("提交失败，请正确填写!")
+        }
+    };
+
+    document.getElementById('submit').addEventListener("click",validateAll,false);
+
+</script>
+
+</body>
+</html>
