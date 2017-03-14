@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+            font-family: 'Microsoft YaHei'
+        }
+        input[type="button"] {
+            border: none;
+            background-color: #2F79BA;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="text"] {
+            padding: 7px;
+        }
+        p {
+            font-size: .8rem;
+            color: #888888;
+            margin:  0 0 0 35px;
+        }
+
+    </style>
+</head>
+<body>
+    <label for="name">名称</label>
+    <input type="text" id="name"/>
+    <input type="button" id="validate" value="验证"/>
+    <p id="hint">必填，长度为4~16个字符</p>
+
+    <script type="text/javascript">
+        var text = document.getElementById('name');
+        var hint = document.getElementById('hint');
+        var text_input = document.getElementById('name');
+
+        function validate() {
+            if (text.value == "") {
+               hint.innerHTML = "姓名不能为空";
+               hint.style.color = "#f00";
+               text_input.style.border = "2px solid #f00";
+               return;
+            } else if (getLength(text.value) < 4 || getLength(text.value) > 16) {
+               hint.innerHTML = "长度只能为4~16个字符";
+               hint.style.color = '#f00';
+               text_input.style.border = "2px solid #0f0";
+               return;
+            } else {
+                hint.innerHTML = "名称格式正确";
+                hint.style.color = "#0f0";
+                text_input.style.border = "2px solid #0f0";
+                return text.value;
+            }
+        }
+
+        function getLength(str) {
+            var count = 0;
+            for (var i = 0;i< str.length;i++) {
+                var char_code = str.charCodeAt(i);
+                if(char_code >= 0 && char_code <= 128) {
+                    count += 1;
+                } else {
+                    count += 2;
+                }
+            }
+
+            return count;
+        }
+
+        document.getElementById('validate').addEventListener("click",validate,false);
+    </script>
+
+
+</body>
+</html>
