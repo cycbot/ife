@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/echarts.min.js"></script>
+    <style>
+        #main {
+            width: 600px;
+            height: 400px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div id="main"></div>
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+
+    var option = {
+        title: [{
+            text: 'What\'s my credit score?',
+            textStyle:{
+                fontSize:24,
+                color:'#494d4b',
+                fontWeight: 'bold'
+            },
+            subtext: 'Puerto Rico, % decrease on a year earlier',
+            subtextStyle: {
+                fontSize: 16,
+                color: '#494d4b'
+            },
+            top:20,
+            left: 40
+        },
+            {
+                subtext: 'Sources:World Bank;Census Bureau;EIU',
+                subtextStyle: {
+                    fontSize: 16,
+                    color: '#494d4b'
+                },
+                bottom:10,
+                left:40
+            }],
+        legend: {
+            data:['Population','GDP'],
+            left: 40,
+            top: 100,
+            padding: 0,
+            textStyle: {
+                fontSize: 16
+            }
+        },
+        grid: {
+            left: 40,
+            top: 140
+        },
+        xAxis: [{
+            data: ["2006","07","08","09","10","11","12","13","14","15"],
+            type: 'category',
+            axisLine: {
+                onZero: false
+            },
+            axisTick: {
+                inside: true,
+                alignWithLabel: true,
+                length: 6
+            }
+        },{
+            type: 'category',
+            z: 10,
+            axisLine: {
+                lineStyle: {
+                    color: '#e88580',
+                    width: 2
+                }
+            }
+        }],
+        yAxis: {
+            type: 'category',
+            inverse: true,
+            position: 'right',
+            axisLine: {
+                show: false
+            },
+            splitLine: {
+              show: true,
+              lineStyle: {
+                  color: '#fff',
+                  width: 2
+              }
+            },
+            axisLabel: {
+                textStyle: {
+                    color: '#000',
+                    fontSize: 16
+                }
+            },
+            data: ["0","1","2","3"]
+        },
+        series: [
+            {
+                name: 'Population',
+                type: 'bar',
+                data: [1.5,1.6,1.6,1.6,1.6,1.1,1.1,1.1,1.1,1.6]
+            },
+            {
+                name: 'GDP',
+                type: 'bar',
+                data: [0.8,3,1.7,2.2,2.3,2.4,1.8,0.5,0.8,1.0]
+            }
+        ],
+        color: ['#33b6e3','#33758a'],
+        backgroundColor: '#d7e5ec'
+    };
+
+    myChart.setOption(option);
+</script>
+</body>
+</html>
