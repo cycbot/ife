@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/three.js"></script>
+</head>
+<body onload="init()">
+    <canvas id="mainCanvas" width="800px" height="600px"></canvas>
+
+    <script>
+
+        function init() {
+            var renderer = new THREE.WebGLRenderer({
+                canvas: document.getElementById('mainCanvas')
+            });
+
+            renderer.setClearColor('#666666');
+
+            var scene = new THREE.Scene();
+
+            var camera = new THREE.PerspectiveCamera(60, 4/3, 1, 1000)
+
+            camera.position.set(6, 2, 4);
+            camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+            var cube = new THREE.Mesh(new THREE.CubeGeometry(5, 2, 2),
+                new THREE.MeshLambertMaterial({
+                    color: 0xffffff
+                })
+            );
+
+            scene.add(cube);
+
+            var rightHeadWheel = new THREE.Mesh(new THREE.TorusGeometry(.4, .2, 18, 18),
+                new THREE.MeshLambertMaterial({
+                    color: 0xffffff
+                })
+            );
+            scene.add(rightHeadWheel);
+
+            rightHeadWheel.position.set(1.5, -1, 1);
+            // 左前轮
+            var leftHeadWheel = new THREE.Mesh(new THREE.TorusGeometry(.4, .2, 18, 18),
+                new THREE.MeshLambertMaterial({
+                    color: 0xffffff
+                })
+            );
+            scene.add(leftHeadWheel);
+
+            leftHeadWheel.position.set(1.5, -1, -1);
+
+            var leftAfterWheel = new THREE.Mesh(new THREE.TorusGeometry(.4, .2, 18, 18),
+                new THREE.MeshLambertMaterial({
+                    color: 0xffffff
+                })
+            );
+            scene.add(leftAfterWheel);
+
+            leftAfterWheel.position.set(-1.5, -1, -1);
+
+            var rightAfterWheel = new THREE.Mesh(new THREE.TorusGeometry(.4, .2, 18, 18),
+                new THREE.MeshLambertMaterial({
+                    color: 0xffffff
+                })
+            );
+
+            rightAfterWheel.position.set(-1.5, -1, 1);
+            scene.add(rightAfterWheel);
+
+            var light = new THREE.DirectionalLight();
+            light.position.set(2, 5, 3)
+            scene.add(light);
+            
+            renderer.render(scene, camera)
+        }
+    </script>
+</body>
+</html>
