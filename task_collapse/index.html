@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠面板</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .collapsible-group {
+            width: 70%;
+            min-width: 500px;
+            margin: 20px auto;
+        }
+        .collapsible-group label {
+            display: block;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #eee;
+            cursor: pointer;
+            transition: border-radius 1s;
+        }
+        .collapsible-group input {
+            display: none;
+        }
+        .collapsible-group .content {
+            height: 0;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-width: 0;
+            border-radius: 0 0 5px 5px;
+            transition: all 0.8s;
+        }
+        .collapsible-group input[type="radio"]:checked + label {
+            border-radius: 5px 5px 0 0;
+        }
+        .collapsible-group input[type="radio"]:checked + label + .content{
+            height: 120px;
+            border-width: 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="collapsible-group">
+        <input type="radio" id="item1" name="collapsible-group">
+        <label for="item1">
+            标签1
+        </label>
+        <div class="content">
+            <p>蛤蛤</p>
+        </div>
+        <input type="radio" id="item2" name="collapsible-group">
+        <label for="item2">
+            标签2
+        </label>
+        <div class="content">
+            <p>蛤蛤</p>
+        </div>
+        <input type="radio" id="item3" name="collapsible-group">
+        <label for="item3">
+            标签3
+        </label>
+        <div class="content">
+            <p>蛤蛤</p>
+        </div>
+    </div>
+</body>
+</html>
