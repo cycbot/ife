@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>无限滚动</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style type="text/css">
+        #spinner{
+            text-align: center;
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            margin:auto;
+            display: block;
+            color: #fff;
+            font-weight: 900;
+            background-color: #0665C4;
+            width: 100px;
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-radius: 15px;
+        }
+        
+        .item {
+            width: 70%;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 20px auto;
+            text-align: center;
+            list-style: none;
+            border: 1px solid #d3d3d3;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+</div>
+<div id="spinner">
+    正在加载
+</div>
+<script type="text/javascript">
+    var index = 0;
+    function lowEnough(){
+        var pageHeight = Math.max(document.body.scrollHeight,document.body.offsetHeight);
+        var viewportHeight = window.innerHeight ||
+            document.documentElement.clientHeight ||
+            document.body.clientHeight || 0;
+        var scrollHeight = window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop || 0;
+        // console.log(pageHeight);
+        // console.log(viewportHeight);
+        // console.log(scrollHeight);
+        return pageHeight - viewportHeight - scrollHeight < 40;
+    }
+
+    function doSomething(){
+        var htmlStr = "";
+        for(var i=0;i<10;i++){
+            htmlStr += "<li class='item'>这是第"+index+"次加载</li>";
+        }
+        $('#container').append(htmlStr);
+        index++;
+        pollScroll();//继续循环
+        $('#spinner').hide();
+    }
+
+    function checkScroll(){
+        if(!lowEnough()) return pollScroll();
+
+        $('#spinner').show();
+        setTimeout(doSomething,900);
+
+    }
+    function pollScroll(){
+        setTimeout(checkScroll,1000);
+    }
+    checkScroll();
+</script>
+</body>
+</html>
+
