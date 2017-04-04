@@ -4,104 +4,90 @@
     <meta charset="UTF-8">
     <title>3D轮播</title>
     <style>
-        .stage_area {
-            width: 900px;
-            min-height: 100px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 100px 50px;
-            background-color: #f0f0f0;
-            box-shadow: inset 0 0 3px rgba(0,0,0,.35);
-
-            -webkit-perspective: 800px;
-            -moz-perspective: 800px;
-            perspective: 800px;
-
-            -webkit-transition: top .5s;
-
-            position: relative;
-            top: 0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul, li {
+            list-style: none;
         }
 
-        .container {
-            width: 128px;
-            height: 100px;
-            margin-left: -64px;
+        .carousel {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            perspective: 1000px;
+        }
 
-            -webkit-transition: -webkit-transform 1s;
-            -moz-transition: -moz-transform 1s;
-            transition: transform 1s;
-
-            -webkit-transform-style: preserve-3d;
-            -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-
+        .items {
             position: absolute;
             left: 50%;
+            width: 300px;
+            transform: translate(-50%);
+            transform-style: preserve-3d;
+            transition: transform 1s;
         }
 
-        .piece {
-            width: 128px;
-
-            box-shadow: 0 1px 3px rgba(0,0,0,.5);
-
-            -webkit-transition: opacity 1s, -webkit-transform 1s;
-            -moz-transition: opacity 1s, -moz-transform 1s;
-            transition: opacity 1s, transform 1s;
-
+        .item {
+            margin-top: 100px;
             position: absolute;
-            bottom: 0;
         }
 
+        .slide {
+            width: 80%;
+            margin-left: 10%;
+            border: 1px solid #d3d3d3;
+        }
     </style>
 </head>
 <body>
-    <div id="stage" class="stage_area">
-        <div id="container" class="container">
-
+    <div class="container">
+        <div class="carousel">
+            <ul class="items">
+                <li class="item">
+                    <a href="#" class="link"><img src="img/img1.png" class="slide"></a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link"><img src="img/img2.jpg" class="slide"></a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link"><img src="img/img3.jpg" class="slide"></a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link"><img src="img/img4.jpg" class="slide"></a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link"><img src="img/img5.jpg" class="slide"></a>
+                </li>
+                <li class="item">
+                    <a href="#" class="link"><img src="img/img6.jpg" class="slide"></a>
+                </li>
+            </ul>
         </div>
     </div>
 
-    <script>
-        var transform = function(element, value, key) {
-                key = key || "Transform";
-                ["Moz", "O", "Ms", "Webkit", ""].forEach(function(prefix) {
-                    element.style[prefix + key] = value;
-                });
-
-                return element;
+    <script type="text/javascript">
+        window.onload = function () {
+            const imgs = document.querySelectorAll('.item');
+            const len = imgs.length;
+            const deg = 360 / len;
+            const r = 150 / Math.tan(deg / 2 * Math.PI / 180);
+            for (let i = 0; i < len; i++) {
+                const img = imgs[i];
+                img.style.transform = `rotateY(${deg * i}deg) translateZ(${r}px)`
             }
-            // 浏览器选择器API
-            , $ = function(selector) {
-                return document.querySelector(selector);
-            }, $$ = function(selector) {
-                return document.querySelectorAll(selector);
-            };
 
-        // 显示图片
-        var htmlPic = '', arrayPic = [1, 8, 3, 4, 6, 7, 10, 13, 15], rotate = 360 / arrayPic.length;
+            const container = document.querySelector('.items');
+            let degt = 0;
 
-        arrayPic.forEach(function(i) {
-            htmlPic = htmlPic + '<img id="piece'+ i +'" src="http://image.zhangxinxu.com/image/study/s/s128/mm'+ i +'.jpg" class="piece" />';
-        });
-
-        // 元素
-        var eleStage = $("#stage"), eleContainer = $("#container"), indexPiece = 0;
-        // 元素
-        var elePics = $$(".piece"), transZ = 64 / Math.tan((rotate / 2 / 180) * Math.PI);
-
-        eleContainer.innerHTML = htmlPic;
-
-        eleContainer.addEventListener("click", function() {
-            transform(this, "rotateY("+ (-1 * rotate * ++indexPiece) +"deg)");
-        });
-
-        arrayPic.forEach(function(i, j) {
-            transform($("#piece" + i), "rotateY("+ j * rotate +"deg) translateZ("+ (transZ + 20) +"px)");
-        });
-
-
-
+            setInterval(function () {
+                degt = degt - deg;
+                console.log(degt);
+                container.style.transform = `translate(-50%) rotateY(${degt}deg)`;
+            },1000)
+        }
     </script>
 </body>
 </html>

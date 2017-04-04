@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d546273-ffff-4ef9-9b0d-ec3e3c55f44b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_vue-3/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_carousel/img/img1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_carousel/img/img2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_carousel/img/img3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_carousel/img/img4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_carousel/img/img5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_carousel/img/img6.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task_carousel/index.html" afterPath="$PROJECT_DIR$/task_carousel/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -62,11 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/task_vue-3/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="928">
               <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/task_carousel/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="778">
+              <caret line="86" column="34" lean-forward="false" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -89,7 +104,11 @@
       <find>blockbg</find>
       <find>point</find>
       <find>intro</find>
+      <find>console</find>
     </findStrings>
+    <replaceStrings>
+      <replace>let</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -120,9 +139,9 @@
         <option value="$PROJECT_DIR$/task_tagcloud/index.html" />
         <option value="$PROJECT_DIR$/task1-1/index.html" />
         <option value="$PROJECT_DIR$/task_collapse/index.html" />
-        <option value="$PROJECT_DIR$/task_carousel/index.html" />
         <option value="$PROJECT_DIR$/task_infinitescroll/index.html" />
         <option value="$PROJECT_DIR$/task_vue-3/index.html" />
+        <option value="$PROJECT_DIR$/task_carousel/index.html" />
       </list>
     </option>
   </component>
@@ -139,7 +158,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1176" />
+    <option name="width" value="1187" />
     <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
@@ -212,6 +231,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task_carousel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ife" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="task_carousel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -232,19 +283,19 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/task_carousel/img" />
+      <recent name="$PROJECT_DIR$/task_echarts-3/data" />
+      <recent name="$PROJECT_DIR$/task_echarts-3/js" />
+      <recent name="$PROJECT_DIR$/task1-11/image" />
+      <recent name="$PROJECT_DIR$/task1-7/image" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/task_threejs-1/js" />
       <recent name="$PROJECT_DIR$/task_echarts-3/data" />
       <recent name="$PROJECT_DIR$/task_echarts-2/js" />
       <recent name="$PROJECT_DIR$/task_echarts-1/js" />
       <recent name="$PROJECT_DIR$/task1-6/css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/task_echarts-3/data" />
-      <recent name="$PROJECT_DIR$/task_echarts-3/js" />
-      <recent name="$PROJECT_DIR$/task1-11/image" />
-      <recent name="$PROJECT_DIR$/task1-7/image" />
-      <recent name="$PROJECT_DIR$/task1-6/images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -366,17 +417,18 @@
       <workItem from="1491058769662" duration="78000" />
       <workItem from="1491058865730" duration="2046000" />
       <workItem from="1491105501230" duration="2337000" />
-      <workItem from="1491300245568" duration="4597000" />
+      <workItem from="1491300245568" duration="7040000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72406000" />
+    <option name="totallyTimeSpent" value="74849000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1176" height="1080" extended-state="0" />
+    <frame x="0" y="0" width="1187" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15930736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15780446" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -693,14 +745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/task_carousel/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/task1-4/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -758,6 +802,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="928">
           <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/task_carousel/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="86" column="34" lean-forward="false" selection-start-line="86" selection-start-column="34" selection-end-line="86" selection-end-column="34" />
           <folding />
         </state>
       </provider>
