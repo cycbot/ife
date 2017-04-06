@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义checkbox、radio</title>
+    <style>
+        input {
+            margin: 0;
+            display: none;
+        }
+        .check {
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+
+        .checkbox+label, .radioInput+label {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #d9d9d9;
+            display: flex;
+        }
+        .checkbox:checked+label, .radioInput:checked+label {
+            border: 1px solid #d73d32;
+            font-weight: 700;
+        }
+        .checkbox:checked+label::after, .radioInput:checked+label::after {
+            margin: auto;
+            content:'\2714';
+            color: red;
+            width: 8px;
+            height: 8px;
+            line-height: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .radio {
+            display: flex;
+            width: 50px;
+            justify-content: space-between;
+        }
+        .radioInput+label {
+            border-radius: 50%;
+        }
+        .radioInput:checked+label::after {
+            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            line-height: 8px;
+            content: '';
+            background: #d73d32;
+        }
+
+        /*雪碧图*/
+        /*.sprit+label, .radioBox_sprit+label {*/
+            /*width: 16px;*/
+            /*height: 16px;*/
+            /*border: none;*/
+            /*display: inline-block;*/
+            /*background: url("img/img2.jpg") no-repeat;*/
+        /*}*/
+        /*.sprit+label {*/
+            /*background-position: -25px -32px;*/
+        /*}*/
+        /*.radioBox_sprit+label {*/
+            /*background-position: -24px -10px;*/
+        /*}*/
+        /*.sprit:checked+label {*/
+            /*background-position: -60px -32px;*/
+        /*}*/
+        /*.radioBox_sprit:checked+label {*/
+            /*background-position: -59px -10px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="check">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox"></label>
+        </div>
+        <div class="radio">
+            <input type="radio" name="id" id="radio1" class="radioInput">
+            <label for="radio1"></label>
+            <input type="radio" name="id" id="radio2" class="radioInput">
+            <label for="radio2"></label>
+        </div>
+        <!--<div class="check">-->
+            <!--<input type="checkbox" id="checkBox_sprit" class="sprit">-->
+            <!--<label for="checkBox_sprit"></label>-->
+        <!--</div>-->
+        <!--<div class="radio">-->
+            <!--<input type="checkbox" id="radioBox_sprit1" class="sprit">-->
+            <!--<label for="radioBox_sprit1"></label>-->
+            <!--<input type="radio" id="radioBox_sprit2" class="radioBox_sprit">-->
+            <!--<label for="radioBox_sprit2"></label>-->
+        <!--</div>-->
+    </div>
+</body>
+</html>
