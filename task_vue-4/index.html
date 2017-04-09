@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态数据绑定(四)</title>
+</head>
+<body>
+    <div id="app">
+        <p>
+            姓名: {{user.name.firstName}}<span>{{user.name.lastName}}</span>
+        </p>
+        <p>年龄: {{user.age}}</p>
+        <div>性别: {{user.sex}}</div>
+    </div>
+    <script>
+        function Vue(obj) {
+          this.el = obj.el;
+          this.data = obj.data;
+          Vue.prototype.init(this.el, this.data);
+        }
+        Vue.prototype = {
+          construct: Vue,
+          init: (el,data) => {
+            if(!('textContent' in document)) {
+              console.log('浏览器版本过低!');
+              return;
+            }
+
+            let Enter = document.getElementById(el.slice(1));
+
+            function translate(entrance, reg, value) {
+              if(entrance instanceof HTMLElement) {
+                let children = entrance.childNodes,
+                    len = entrance.childNodes.length;
+                for (let i = len - 1; i >= 0; i--) {
+                  if(children[i].childNodes.length > 0) {
+                    translate(children[i], reg, value)
+                  } else {
+                    children[i].textContent = children[i].textContent.replace(reg, value);
+                  }
+                }
+              } else {
+                console.log('入口无效!');
+              }
+            }
+
+            function walk(entrance, obj, name) {
+              if(entrance instanceof HTMLElement) {
+                if(obj !== null && typeof obj === 'object') {
+                  let reg;
+                  for(let key in obj) {
+                    if(typeof obj[key] !== 'object') {
+                      reg = name ? new RegExp(`{{${name}.${key}}}`,'g') : new RegExp(`{{${key}}}`,'g');
+                      translate(entrance, reg, obj[key]);
+                    } else {
+                      walk(entrance, obj[key], name ? `${name}.${key}` : key);
+                    }
+                  }
+                }
+              } else {
+                console.log('入口无效!')
+              }
+            }
+
+            walk(Enter, data);
+
+          }
+        };
+
+        let app = new Vue({
+          el: '#app',
+          data: {
+            user: {
+              name: {
+                firstName: '蛤',
+                lastName: '蛤'
+              },
+              age: '999',
+              sex: '男'
+            }
+          }
+        });
+
+    </script>
+</body>
+</html>
