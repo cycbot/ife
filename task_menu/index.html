@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #wrapper {
+            width: 400px;
+            height: 200px;
+            background: #d3d3d3;
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+            line-height: 200px;
+        }
+        #menu {
+            height: 50px;
+            width: 200px;
+            background: #fff;
+            border: 1px solid gray;
+            border-radius: 5px;
+            display: none;
+            position: absolute;
+            padding: 10px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 5px;
+            width: 100%;
+            height: 100%;
+        }
+
+        ul li {
+            list-style-type: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        点点点
+    </div>
+    <menu id="menu">
+        <ul>
+            <li>复制</li>
+            <li>粘贴</li>
+        </ul>
+    </menu>
+</body>
+<script type="text/javascript">
+    var wrapper = document.getElementById('wrapper');
+    var menu = document.getElementById("menu");
+    wrapper.oncontextmenu = function(ev) {
+        var oEvent = ev || event;
+        //自定义的菜单显示
+        menu.style.display = "block";
+        //让自定义菜单随鼠标的箭头位置移动
+        menu.style.left = oEvent.clientX + "px";
+        menu.style.top = oEvent.clientY + "px";
+        //return false阻止系统自带的菜单，
+        //return false必须写在最后，否则自定义的右键菜单也不会出现
+        return false;
+
+    }
+    //实现点击document，自定义菜单消失
+    document.onclick = function() {
+
+        menu.style.display = "none";
+    }
+</script>
+
+</html>
