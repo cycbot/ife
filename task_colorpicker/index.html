@@ -3,8 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>UI组件之色彩选择器</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-    <canvas></canvas>
+<div class="container">
+    <div class="colorBlock">
+        <canvas id="color"></canvas>
+        <span class="selectColor"></span>
+    </div>
+    <div class="colorItems">
+        <canvas id="colors" class="colorCanvas"></canvas>
+        <span class="redCircle"></span>
+    </div>
+    <div class="colorShow">
+        <label for="red">R</label><input id="red" value="255"  class="colorInput" type="text">
+        <div class="buttonContainer">
+            <span class="plusButton"></span><br>
+            <span class="subtractButton"></span>
+        </div>
+
+        <label for="green">G</label><input id="green" value="255" class="colorInput" type="text">
+        <div class="buttonContainer">
+            <span class="plusButton"></span><br>
+            <span class="subtractButton"></span>
+        </div>
+        <label for="blue">B</label><input id="blue" value="255" class="colorInput" type="text">
+        <div class="buttonContainer">
+            <span class="plusButton"></span><br>
+            <span class="subtractButton"></span>
+        </div>
+        <hr>
+        <label for="hue">H</label><input id="hue" value="0.00" class="colorInput" type="text">
+        <div class="buttonContainer">
+            <span class="plusButton"></span><br>
+            <span class="subtractButton"></span>
+        </div>
+        <label for="saturation">S</label><input id="saturation" value="0.00" class="colorInput" type="text">
+        <div class="buttonContainer">
+            <span class="plusButton"></span><br>
+            <span class="subtractButton"></span>
+        </div>
+        <label for="lightness">L</label><input id="lightness" value="1.00" class="colorInput" type="text">
+        <div class="buttonContainer">
+            <span class="plusButton"></span><br>
+            <span class="subtractButton"></span>
+        </div>
+    </div>
+    <div class="setColor">
+        <label  for="specialColor">Color:</label><input id="specialColor" class="color" type="text">
+        <div class="colorDiv"></div>
+    </div>
+</div>
+
+
+<script src="js/script.js"></script>
+
 </body>
 </html>
