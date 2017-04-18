@@ -1,89 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>tree</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>实现树形组件</title>
     <style type="text/css">
-        .node ul{
-            margin-left:20px;
+        .fa {
+            width: 24px;
         }
-        .node .node{
-            display:none;
+        .root {
+            padding: 0;
         }
-        .node .tree{
-            height:24px;
-            line-height:24px;
+        .hidden .child {
+            display: none;
         }
-        .ce_ceng_close{
-            background:url(images/cd_zd1.png) left center no-repeat;
-            padding-left: 15px;
+        .child {
+            margin-left: 20px;
         }
-        .ce_ceng_open{
-            background:url(images/cd_zd.png) left center no-repeat;
+        .content {
+            cursor: pointer;
         }
     </style>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
-
 <body>
-<div class="cd_zj_l">
-
-
-    <div class="cd_title">目录导航</div>
-    <div class="cv_fcv node">
-        <div class="tree">哲学、宗教</div>
-        <ul class="node">
-            <li>
-                <div class="tree">哲学伦理</div>
-                <ul class="node">
-                    <li>
-                        <div class="tree">马克思主义哲学</div>
-                        <div class="tree">马克思主义哲学</div>
-                        <div class="tree">马克思主义哲学</div>
-                        <div class="tree">马克思主义哲学</div>
-                    </li>
-                    <div style="clear:both"></div>
-                </ul>
-
-            </li>
-            <div style="clear:both"></div>
-        </ul>
-        <div class="tree">哲学、宗教</div>
-        <ul class="node">
-            <li>
-                <div class="tree">哲学伦理</div>
-                <ul class="node">
-                    <li>
-                        <div class="tree">马克思主义哲学</div>
-                        <div class="tree">马克思主义哲学</div>
-                        <div class="tree">马克思主义哲学</div>
-                        <div class="tree">马克思主义哲学</div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+<div class="tree">
+    <ul class="root"></ul>
 </div>
 <script type="text/javascript">
-    $(".tree").each(function(index, element) {
-        if($(this).next(".node").length>0){
-            $(this).addClass("ce_ceng_close");
+    function init () {
+        var nodes = [
+            {
+                name: "父节点1",
+                children: [
+                    {
+                        name: "子节点1"
+                    }, {
+                        name: "子节点2"
+                    }
+                ]
+            }, {
+                name: "父节点2",
+                children: [
+                    {
+                        name: "子节点3"
+                    }, {
+                        name: "子节点4",
+                        children:[
+                            {
+                                name:"子节点5"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+        const rootNode = document.querySelector('.root');
+        // 渲染树
+        walk(nodes, rootNode);
+        // 遍历绑定点击事件
+        document.querySelector('.tree').onclick = function (e) {
+            const textEl = e.target;
+            const parent = textEl.parentElement;
+            // 判断点击的节点类型
+            if (parent.nodeName === 'LI') {
+                return
+            } else if (parent.nodeName === 'UL') {
+                // 这个才是要展开或者收起子文件
+                const className = parent.className;
+                // 如果是隐藏的，就展开
+                if (/hidden/.exec(className)) {
+                    parent.className = 'root';
+                    return
+                }
+                parent.className += ' hidden';
+
+            }
         }
-    });
-    $(".tree").click(function(e){
-        var ul = $(this).next(".node");
-        if(ul.css("display")=="none"){
-            ul.slideDown();
-            $(this).addClass("ce_ceng_open");
-            ul.find(".ce_ceng_close").removeClass("ce_ceng_open");
-        }else{
-            ul.slideUp();
-            $(this).removeClass("ce_ceng_open");
-            ul.find(".node").slideUp();
-            ul.find(".ce_ceng_close").removeClass("ce_ceng_open");
+    }
+
+    function walk (nodes, root) {
+        //遍历节点并渲染
+        for(let i = 0, len = nodes.length; i < len; i++) {
+            let node = nodes[i];
+            const rootNode = document.createElement('li');
+            rootNode.className = 'child';
+            render(node, rootNode);
+            root.appendChild(rootNode)
         }
-    });
+    }
+
+    function render (node, parent) {
+        let rootNode = null;
+        // 如果有子元素，就是文件夹型节点
+        if (node.children) {
+            rootNode = document.createElement('ul');
+            rootNode.className = 'root';
+            rootNode.innerHTML = `<p class="content">${node.name}</p>`;
+            walk(node.children, rootNode)
+        } else {
+            rootNode = document.createElement('p');
+            rootNode.className = 'content';
+            rootNode.innerHTML = `${node.name}`;
+        }
+
+        parent.appendChild(rootNode);
+    }
+
+    window.onload = function () {
+        init();
+    }
 </script>
 </body>
 </html>
