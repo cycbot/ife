@@ -64,9 +64,8 @@
             if (parent.nodeName === 'LI') {
                 return
             } else if (parent.nodeName === 'UL') {
-                // 这个才是要展开或者收起子文件
                 const className = parent.className;
-                // 如果是隐藏的，就展开
+
                 if (/hidden/.exec(className)) {
                     parent.className = 'root';
                     return

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ECharts 3</title>
     <script src="js/echarts.min.js"></script>
     <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <style>
@@ -19,6 +19,7 @@
         var myChart = echarts.init(document.getElementById('main'));
         myChart.showLoading();
         $.get('data/world.json',function (json) {
+            //加载中动画。。
             myChart.hideLoading();
             echarts.registerMap('World',json)
             option = {

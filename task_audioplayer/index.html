@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>html5音乐播放器</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-$END$
+    <div class="player">
+        <div class="header">音乐播放器</div>
+        <div class="albumPic"></div>
+        <div class="trackInfo">
+            <div class="name">蛤</div>
+            <div class="artist">蛤</div>
+            <div class="album">蛤</div>
+        </div>
+
+        <div class="progress"></div>
+
+        <div class="controls">
+            <div class="play">
+                <i class="icon-play"></i>
+            </div>
+        </div>
+
+        <div class="previous">
+            <i class="icon-previous"></i>
+        </div>
+
+        <div class="next">
+            <i class="icon-next"></i>
+        </div>
+
+
+        <div class="time">
+            <div class="current">0:12</div>
+            <div class="total">2:14</div>
+        </div>
+
+        <audio id="audio"><source src=""></audio>
+    </div>
 </body>
 </html>
