@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d546273-ffff-4ef9-9b0d-ec3e3c55f44b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_audioplayer/css/fonts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/task_audioplayer/css/reset.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/task_audioplayer/index.html" afterPath="$PROJECT_DIR$/task_audioplayer/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,8 +63,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/task_audioplayer/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="88">
+              <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -207,8 +206,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="100" />
-    <option name="y" value="26" />
+    <option name="x" value="152" />
+    <option name="y" value="221" />
     <option name="width" value="1714" />
     <option name="height" value="977" />
   </component>
@@ -454,15 +453,15 @@
       <workItem from="1492953015881" duration="23000" />
       <workItem from="1492953059567" duration="1660000" />
       <workItem from="1492956667738" duration="4697000" />
-      <workItem from="1493011219797" duration="500000" />
+      <workItem from="1493011219797" duration="583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110762000" />
+    <option name="totallyTimeSpent" value="110845000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="100" y="26" width="1714" height="977" extended-state="0" />
+    <frame x="152" y="221" width="1714" height="977" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13112818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -858,8 +857,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/task_audioplayer/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="15" column="32" lean-forward="false" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+        <state relative-caret-position="88">
+          <caret line="4" column="14" lean-forward="false" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding />
         </state>
       </provider>
